@@ -69,6 +69,12 @@ th, td { padding: 3px 10px; }
     border-width: thin;
 }
 
+.spacer {
+    font-size: 0.83em;
+    font-weight: bold;
+    margin: 1.67em 0;
+}
+
 /* Print format */
 @media print {
     @page { margin: 2cm; }
@@ -88,7 +94,7 @@ th, td { padding: 3px 10px; }
     ul, ol, dl, aside.sticky { page-break-before: avoid; }
 
     h1 { margin: 10vh 0 20vh; }
-    h2, h3, h4, h5, h6 {
+    h2, h3, h4, h5, h6, .spacer {
         page-break-after: avoid;
         page-break-inside: avoid;
         border: none;
