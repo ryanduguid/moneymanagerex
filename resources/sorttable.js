@@ -155,7 +155,7 @@ var sorttable = {
     // guess the type of a column based on its first non-blank row
     var sortfn = sorttable.sort_alpha;
     for (var i=0; i<table.tBodies[0].rows.length; i++) {
-      var text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
+      var text = sorttable.getInnerText(table.tBodies[0].rows.item(i).cells.item(column));
       if (text != '') {
         if (text.match(/^-?[R£$¤]?[\d,.]+%?$/)) {
           return sorttable.sort_numeric;
