@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Sorttable regression checks</title>
+<body>
+<h1>Sorttable regression checks</h1>
+<pre id="results">Running</pre>
+<div id="fixtures"></div>
+<script>
+    var sorttableChecks = { results: [], globals: {}, names: [
+        'the', 'headrow', 'mtch', 'override', 'sortrevind', 'sortfwdind',
+        'theadrow', 'row_array', 'col', 'rows', 'tb', 'sortfn', 'text',
+        'possdate', 'first', 'second', 'hasInputs', 'newrows', 'aa', 'bb',
+        'y', 'm', 'd', 'dt1', 'dt2'
+    ] };
+    sorttableChecks.names.forEach(function(name) {
+        sorttableChecks.globals[name] = {};
+        window[name] = sorttableChecks.globals[name];
+    });
+    sorttableChecks.table = function(id, headings, rows, header) {
+        var table = document.createElement('table');
+        table.id = id;
+        table.className = 'sortable';
+        var head = header === false ? table.createTBody() : table.createTHead();
+        var headrow = head.insertRow();
+        headings.forEach(function(heading) {
+            var cell = document.createElement('th');
+            cell.textContent = heading[0];
+            cell.className = heading[1] || '';
+            headrow.appendChild(cell);
+        });
+        var body = header === false ? head : table.createTBody();
+        rows.forEach(function(values, index) {
+            var row = body.insertRow();
+            row.id = id + index;
+            values.forEach(function(value) {
+                var cell = row.insertCell();
+                cell.textContent = typeof value === 'object' ? value.text : value;
+                if (typeof value === 'object') {
+                    cell.setAttribute('sorttable_customkey', value.key);
+                }
+            });
+        });
+        document.getElementById('fixtures').appendChild(table);
+        return table;
+    };
+    sorttableChecks.table('numbers', [['Number'], ['Name'], ['Skip', 'sorttable_nosort']],
+        [['10', 'Zulu', 'z'], ['-2', 'Beta', 'b'], ['1', 'Alpha', 'a']]);
+    sorttableChecks.table('dates', [['Date']], [['23/4/2026'], ['2/3/2026'], ['1/1/2025']]);
+    sorttableChecks.table('usdates', [['Date']], [['4/23/2026'], ['3/2/2026'], ['1/1/2025']]);
+    sorttableChecks.table('keys', [['Value', 'sorttable_numeric']],
+        [[{text: '$1,000.00', key: '1000'}], [{text: '$20.00', key: '20'}]]);
+    sorttableChecks.table('nohead', [['Name']], [['Zulu'], ['Alpha']], false);
+    var multipleHeads = sorttableChecks.table('multipleheads', [['Name']], [['Zulu'], ['Alpha']]);
+    multipleHeads.tHead.insertRow().insertCell().textContent = 'Second header';
+</script>
+<script src="../resources/sorttable.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        function check(name, run) {
+            try {
+                run();
+                sorttableChecks.results.push({name: name, passed: true});
+            } catch (error) {
+                sorttableChecks.results.push({name: name, passed: false, error: error.message});
+            }
+        }
+        function equal(actual, expected) {
+            if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+                throw new Error(JSON.stringify(actual) + ' != ' + JSON.stringify(expected));
+            }
+        }
+        function table(id) { return document.getElementById(id); }
+        function click(id, column) { table(id).tHead.rows[0].cells[column || 0].click(); }
+        function order(id) {
+            return Array.from(table(id).tBodies[0].rows, function(row) { return row.id; });
+        }
+        check('numeric ascending, descending and ascending again', function() {
+            click('numbers');
+            equal(order('numbers'), ['numbers1', 'numbers2', 'numbers0']);
+            click('numbers');
+            equal(order('numbers'), ['numbers0', 'numbers2', 'numbers1']);
+            click('numbers');
+            equal(order('numbers'), ['numbers1', 'numbers2', 'numbers0']);
+        });
+        check('alphabetical column replaces its sort indicator', function() {
+            click('numbers', 1);
+            equal(order('numbers'), ['numbers2', 'numbers1', 'numbers0']);
+            equal(table('numbers').querySelectorAll('[id^=sorttable_sort]').length, 1);
+        });
+        check('multiple tables keep independent sort indicators and order', function() {
+            click('dates');
+            equal(order('dates'), ['dates2', 'dates1', 'dates0']);
+            equal(order('numbers'), ['numbers2', 'numbers1', 'numbers0']);
+            equal(table('numbers').querySelectorAll('[id^=sorttable_sort]').length, 1);
+            equal(table('dates').querySelectorAll('[id^=sorttable_sort]').length, 1);
+        });
+        check('US dates are inferred from an unambiguous date', function() {
+            click('usdates');
+            equal(order('usdates'), ['usdates2', 'usdates1', 'usdates0']);
+        });
+        check('custom numeric keys sort formatted report values', function() {
+            click('keys');
+            equal(order('keys'), ['keys1', 'keys0']);
+        });
+        check('a missing header is created from the first row', function() {
+            click('nohead');
+            equal(order('nohead'), ['nohead1', 'nohead0']);
+        });
+        check('excluded columns and multiple header rows are inert', function() {
+            var before = order('numbers');
+            click('numbers', 2);
+            equal(order('numbers'), before);
+            click('multipleheads');
+            equal(order('multipleheads'), ['multipleheads0', 'multipleheads1']);
+        });
+        check('numeric comparator handles blanks, currency and equal values', function() {
+            equal(sorttable.sort_numeric([''], ['0']), 0);
+            equal(sorttable.sort_numeric(['$1,200.50'], ['-2.5']), 1203);
+            equal(sorttable.sort_numeric(['10'], ['10']), 0);
+        });
+        check('nested comparator calls cannot overwrite the outer working value', function() {
+            var nested = {replace: function() {
+                sorttable.sort_numeric(['90'], ['80']);
+                return '2';
+            }};
+            equal(sorttable.sort_numeric(['10'], [nested]), 8);
+        });
+        check('date comparators handle equality and single digit fields', function() {
+            equal(sorttable.sort_ddmm(['2/3/2026'], ['02/03/2026']), 0);
+            equal(sorttable.sort_mmdd(['3/2/2026'], ['03/02/2026']), 0);
+            equal(sorttable.sort_ddmm(['1/1/2025'], ['2/3/2026']), -1);
+        });
+        check('text and custom keys retain their whitespace rules', function() {
+            var cell = document.createElement('td');
+            cell.textContent = '  Alpha  ';
+            equal(sorttable.getInnerText(cell), 'Alpha');
+            cell.setAttribute('sorttable_customkey', '  custom key  ');
+            equal(sorttable.getInnerText(cell), '  custom key  ');
+            equal(sorttable.getInnerText(null), '');
+        });
+        check('input cells use their values alongside text', function() {
+            var cell = document.createElement('td');
+            cell.appendChild(document.createTextNode('  prefix '));
+            var input = document.createElement('input');
+            input.value = '  Beta  ';
+            cell.appendChild(input);
+            equal(sorttable.getInnerText(input), 'Beta');
+            equal(sorttable.getInnerText(cell), 'prefixBeta');
+            cell.setAttribute('sorttable_customkey', 'override');
+            equal(sorttable.getInnerText(cell), 'override');
+        });
+        check('text, CDATA and fragment nodes support fallback extraction', function() {
+            [3, 4].forEach(function(type) {
+                equal(sorttable.getInnerText({nodeType: type, nodeName: '#text', nodeValue: '  Alpha  '}), 'Alpha');
+            });
+            var fragment = document.createDocumentFragment();
+            fragment.appendChild(document.createTextNode('  Alpha  '));
+            equal(sorttable.getInnerText(fragment), 'Alpha');
+        });
+        check('sorting never overwrites other scripts\' global state', function() {
+            var changed = sorttableChecks.names.filter(function(name) {
+                return window[name] !== sorttableChecks.globals[name];
+            });
+            equal(changed, []);
+        });
+        sorttableChecks.done = true;
+        document.getElementById('results').textContent = JSON.stringify(sorttableChecks.results, null, 2);
+    });
+</script>
+</body>
+</html>
