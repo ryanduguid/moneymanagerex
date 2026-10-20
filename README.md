@@ -75,7 +75,7 @@ simplicity and user-friendliness – an application that can be used every day.
 * [Get it on F-Droid](https://f-droid.org/packages/com.money.manager.ex/)
 * [Get it on Google Play](https://play.google.com/store/apps/details?id=com.money.manager.ex.android)
 
-[![Github All Releases](https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/latest/total)](https://tooomm.github.io/github-release-stats/?username=moneymanagerex&repository=moneymanagerex)
+[![Github All Releases](https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/latest/total?style=flat&labelColor=000000&color=66023C)](https://tooomm.github.io/github-release-stats/?username=moneymanagerex&repository=moneymanagerex)
 
 
 ## Screenshots
@@ -200,22 +200,22 @@ MMEX is mainly written in C++17 and uses the following open-source packages:
 [wxsqliteplus]: https://github.com/guanlisheng/wxsqliteplus
 [general reports]: https://github.com/moneymanagerex/general-reports
 [stargazers]: https://github.com/moneymanagerex/moneymanagerex/stargazers
-[a]: https://img.shields.io/appveyor/ci/whalley/moneymanagerex/master.svg?label=windows&logoWidth=0.01
-[ci]: https://img.shields.io/circleci/build/github/moneymanagerex/moneymanagerex/master?label=linux/mac
+[a]: https://img.shields.io/appveyor/ci/whalley/moneymanagerex/master.svg?label=windows&logoWidth=0.01&style=flat&labelColor=000000
+[ci]: https://img.shields.io/circleci/build/github/moneymanagerex/moneymanagerex/master?label=linux/mac&style=flat&labelColor=000000
 [o]: http://www.openhub.net/p/moneymanagerex/widgets/project_thin_badge.gif
-[i]: https://img.shields.io/github/issues-raw/moneymanagerex/moneymanagerex.svg?label=gh%20issues
-[c]: https://img.shields.io/github/contributors/moneymanagerex/moneymanagerex.svg
+[i]: https://img.shields.io/github/issues-raw/moneymanagerex/moneymanagerex.svg?label=gh%20issues&style=flat&labelColor=000000&color=66023C
+[c]: https://img.shields.io/github/contributors/moneymanagerex/moneymanagerex.svg?style=flat&labelColor=000000&color=66023C
 [cd]: https://codedocs.xyz/moneymanagerex/moneymanagerex.svg
-[l]: https://img.shields.io/badge/license-GPL2-blue.svg
-[s]: https://img.shields.io/sourceforge/dt/moneymanagerex.svg?label=%20sf&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC
-[gha]: https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/total.svg?label=%20gh&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC
-[ghl]: https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/latest/total.svg?label=%20gh%20latest&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC
-[w]: https://img.shields.io/website?url=https%3A%2F%2Fmoneymanagerex.org
-[stable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex.svg?label=stable
+[l]: https://img.shields.io/badge/license-GPL2-blue.svg?style=flat&labelColor=000000&color=66023C
+[s]: https://img.shields.io/sourceforge/dt/moneymanagerex.svg?label=%20sf&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC&style=flat&labelColor=000000&logoColor=E5E4E2&color=66023C
+[gha]: https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/total.svg?label=%20gh&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC&style=flat&labelColor=000000&logoColor=E5E4E2&color=66023C
+[ghl]: https://img.shields.io/github/downloads/moneymanagerex/moneymanagerex/latest/total.svg?label=%20gh%20latest&logoWidth=8&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAA4CAMAAABe34GAAAAACVBMVEUAAAAAAAD%2F%2F%2F%2BD3c%2FSAAAAAnRSTlMATX7%2B8BUAAABeSURBVHgB7coxCoBAAAOw0%2F8%2FWtA1tLs0c85Et21vb%2F9pe1jsyP7OrSOzI5eOfL1K%2FlLuyO7O7s7oLbs7uzu7O7s7uzv37uzu7O7sjly6szty6s7uzoZcurMhJ87nAdpRCKWC0tGVAAAAAElFTkSuQmCC&style=flat&labelColor=000000&logoColor=E5E4E2&color=66023C
+[w]: https://img.shields.io/website?url=https%3A%2F%2Fmoneymanagerex.org&style=flat&labelColor=000000&color=66023C
+[stable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex.svg?label=stable&style=flat&labelColor=000000&color=66023C
 
-[unstable]: https://img.shields.io/badge/unstable-beta-yellow
-[st]: https://img.shields.io/github/stars/moneymanagerex/moneymanagerex?label=GitHub&style=social&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA50lEQVQoz5XSr0oFQRzF8c%2FuBd0iiCYviHi1GXwABYMugiaLmKw3iF18AetF8B1MNouDb6AICgbfwCqGKf4JrjIse132lGHOnC%2FMnN%2FQoBjMxyDEYN8Y5WP8IbYwisFMF%2FCkWuew2QrGYCIGI%2FQS%2BzQGs3Uwi8EOjrFReZMNN4nIcI9bnGUxeMOUblrJsYevDtAlXrLqbUc4%2F6esX90Upe2%2FcorSBQ5boGvsNrX63AK%2B4rMJXG8Bl9IxpeBaLfhY2y%2Bm%2Bbx2AA84KEqrWMYVPtBP81nya%2FpYwFNRek%2F8HgaYxl1R%2FozuGyXRMhoIJiaoAAAAAElFTkSuQmCC
-[tw]: https://img.shields.io/twitter/follow/MoneyManagerEx.svg?style=social&label=follow
+[unstable]: https://img.shields.io/badge/unstable-beta-yellow?style=flat&labelColor=000000&color=66023C
+[st]: https://img.shields.io/github/stars/moneymanagerex/moneymanagerex?label=GitHub&style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA50lEQVQoz5XSr0oFQRzF8c%2FuBd0iiCYviHi1GXwABYMugiaLmKw3iF18AetF8B1MNouDb6AICgbfwCqGKf4JrjIse132lGHOnC%2FMnN%2FQoBjMxyDEYN8Y5WP8IbYwisFMF%2FCkWuew2QrGYCIGI%2FQS%2BzQGs3Uwi8EOjrFReZMNN4nIcI9bnGUxeMOUblrJsYevDtAlXrLqbUc4%2F6esX90Upe2%2FcorSBQ5boGvsNrX63AK%2B4rMJXG8Bl9IxpeBaLfhY2y%2Bm%2Bbx2AA84KEqrWMYVPtBP81nya%2FpYwFNRek%2F8HgaYxl1R%2FozuGyXRMhoIJiaoAAAAAElFTkSuQmCC&labelColor=000000&logoColor=E5E4E2&color=66023C
+[tw]: https://img.shields.io/twitter/follow/MoneyManagerEx.svg?style=flat&label=follow&labelColor=000000&color=66023C
 [Buy us a Cofee]: https://cash.me/$guanlisheng/1
 [Donate via PayPal]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=moneymanagerex%40gmail%2ecom&lc=US&item_name=MoneyManagerEx&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
 [Crowdin]: https://crowdin.com/project/moneymanagerex
