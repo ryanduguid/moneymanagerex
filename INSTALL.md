@@ -142,8 +142,8 @@ Yosemite, OS X 10.11 El Capitan, or macOS 10.12 Sierra.
 [Windows]: #microsoft-windows
 [Linux]: #linux
 [macOS]: #os-x--macos
-[stable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex.svg?label=stable
-[unstable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex/all.svg?label=unstable
+[stable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex.svg?label=stable&style=flat&labelColor=000000&color=66023C
+[unstable]: https://img.shields.io/github/release/moneymanagerex/moneymanagerex/all.svg?label=unstable&style=flat&labelColor=000000&color=66023C
 [GitHubDL]:
   https://github.com/moneymanagerex/moneymanagerex/releases
   "GitHub downloads"
