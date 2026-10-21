@@ -33,34 +33,34 @@ simplicity and user-friendliness – an application that can be used every day.
 ## Download
 
 <a href="https://flathub.org/apps/org.moneymanagerex.MMEX">
-    <img src="https://dl.flathub.org/assets/badges/flathub-badge-en.svg"
+    <img src="https://img.shields.io/badge/Download%20on-Flathub-66023C?style=flat&amp;labelColor=000000&amp;color=66023C"
         alt="Download on Flathub"
         title="Download on Flathub"
-        style="height: 68px;"
+        style="height: 20px;"
         hspace="1.5%"
     /></a>
 
 <a href="https://apps.apple.com/app/money-manager-ex/id6683300571">
-    <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1732665600"
+    <img src="https://img.shields.io/badge/Download%20on-the%20App%20Store-66023C?style=flat&amp;labelColor=000000&amp;color=66023C"
         alt="Download on the App Store"
         title="Download on the App Store"
-        style="height: 68px;"
+        style="height: 20px;"
         hspace="1.5%"
     /></a>
 
 <a href="https://f-droid.org/packages/com.money.manager.ex/">
-    <img src="https://github.com/user-attachments/assets/f586f51b-a2d8-4219-a691-a483d4ca8db7"
+    <img src="https://img.shields.io/badge/Get%20it%20on-F--Droid-66023C?style=flat&amp;labelColor=000000&amp;color=66023C"
         alt="Get it on F-Droid"
         title="Get it on F-Droid"
-        style="height: 68px;"
+        style="height: 20px;"
         hspace="1.5%"
     /></a>
 
 <a href="https://play.google.com/store/apps/details?id=com.money.manager.ex.android">
-    <img src="https://github.com/user-attachments/assets/d0844c7a-6e2a-4cac-8848-06c39a9a66ea"
+    <img src="https://img.shields.io/badge/Get%20it%20on-Google%20Play-66023C?style=flat&amp;labelColor=000000&amp;color=66023C"
         alt="Get it on Google Play"
         title="Get it on Google Play"
-        style="height: 68px;"
+        style="height: 20px;"
         hspace="1.5%"
     /></a>
 
